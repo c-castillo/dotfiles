@@ -1,8 +1,8 @@
 # Git configuration.
 
 [user]
-	name = Jack Harrison-Sherlock
-	email = jack@harrisonsherlock.com
+	name = Cristóbal Castillo
+	email = cristobal.castillo@protonmail.com
 
 [branch "master"]
     remote = origin
@@ -106,7 +106,7 @@
 [mergetool]
   prompt = false
 [github]
-  user = jackharrisonsherlock
+  user = c-castillo
 [grep]
   lineNumber = true
 [fetch]
@@ -121,4 +121,4 @@
 # [url "git@github.com:"]
 #    insteadOf = https://github.com/
 
-	excludesfile = /Users/jackharrison-sherlock/.gitignore_global
+	excludesfile = /Users/castelo/.gitignore_global

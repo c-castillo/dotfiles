@@ -19,6 +19,7 @@ alias gl="git log"
 alias gfr="git fetch && git rebase"
 alias gb="git branch"
 alias gco="git checkout"
+alias gcob="git checkout -b"
 alias gf="git fetch"
 alias status="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git -c color.status=always status && echo)' \;"
 eval "$(hub alias -s)"
@@ -29,11 +30,12 @@ alias hidefiles="defaults write com.apple.finder AppleShowAllFiles -bool false &
 
 # Other
 alias myip="curl http://ipecho.net/plain; echo"
-alias ls="colorls"
+alias ls="ls -G"
+alias ll="ls -AbcClhoG"
 alias edit="micro"
 
 # Docker
-alias dc="docker-compose"
-alias dcdev="docker-compose -f docker-compose-dev.yml" 
+alias dco="docker-compose"
+alias dcdev="docker-compose -f docker-compose-dev.yml"
 alias dps="docker ps"
-alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+alias dcoreset='docker kill $(docker ps -a -q) && docker rm $(docker ps -a -q)'

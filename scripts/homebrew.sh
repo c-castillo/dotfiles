@@ -24,7 +24,12 @@ brew install grep --with-default-names
 # Install zsh
 brew install zsh
 brew install tree
-brew install getantibody/tap/antibody
+brew install antigen
+
+# Utils
+brew install ccat
+brew install gotop
+brew install openssl
 
 # Highlighting
 brew install source-highlight
@@ -33,22 +38,23 @@ brew install source-highlight
 brew install git
 brew install git-flow
 brew install cdiff
-brew install hub
 
 # Development
 brew install go
 brew install delve
 brew install python
-brew install python3
-brew install php@7.1
 brew install ruby
 brew install delve
 brew install node
 brew install nvm
-brew install sqllite
 brew install yarn
 brew install java
 brew install groovy
+brew install kafka
+brew install zookeeper
+brew install redis
+brew install docker
+brew install postgresql
 
 # AWS
 brew install awscli
@@ -58,7 +64,6 @@ brew install mas
 brew install tmux
 brew install neovim
 brew install wget
-brew install gdrive
 brew install micro
 
 brew cleanup

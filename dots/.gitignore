@@ -15,7 +15,7 @@ Thumbs.db
 # Compiled Python files
 *.pyc
 
-# Compiled source 
+# Compiled source
 *.com
 *.class
 *.dll
@@ -23,12 +23,12 @@ Thumbs.db
 *.o
 *.so
 
-# Logs and databases 
+# Logs and databases
 *.log
 *.sql
 *.sqlite
 
-# Packages 
+# Packages
 *.7z
 *.dmg
 *.gz
