@@ -1,0 +1,14 @@
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+
+seletskiy/zsh-git-smart-commands
+b4b4r07/http_code
+johanhaleby/kubetail
+c-castillo/ccze
+lukechilds/zsh-nvm
+
+desyncr/auto-ls
+MichaelAquilina/zsh-autoswitch-virtualenv
+romkatv/powerlevel10k
