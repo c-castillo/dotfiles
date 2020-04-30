@@ -11,8 +11,8 @@ computer:
 
 .PHONY: stow
 stow:
-	@stow -t ~ tmux zsh git ripgrep vim
+	@stow -t ~ tmux zsh git ripgrep vim iterm
 
 .PHONY: unstow
 unstow:
-	@stow -D -t ~ tmux zsh git ripgrep
+	@stow -D -t ~ tmux zsh git ripgrep vim iterm
