@@ -41,6 +41,7 @@ brew "jesseduffield/lazygit/lazygit"
 brew "httpie"
 brew "bat"
 brew "nnn"
+brew 'mas' # Mac App Store manager
 
 cask "fliqlo"
 
@@ -53,7 +54,9 @@ cask "font-fira-code"
 cask "brave-browser"
 cask "spotify"
 cask "visual-studio-code"
-cask "zoomus"
-cask "docker"
 cask "rambox"
 cask "slack"
+cask "iterm2"
+cask "zoomus"
+#apple store
+mas 'Todoist', id: 585829637

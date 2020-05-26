@@ -5,8 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-autoload -U compinit; compinit
-
 export PATH="/usr/local/sbin:$PATH"
 export EDITOR=vim
 export PATH=$PATH:$HOME/bin
@@ -15,17 +13,18 @@ export LANG=en_US.UTF-8
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export NVM_AUTO_USE=true
-#export ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
+export ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
 export AUTO_LS_COMMANDS=(ls)
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+export CLICOLOR_FORCE=1
 
-
-#source $ZSH/oh-my-zsh.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+autoload -Uz compinit
+compinit
 
 source <(antibody init)
 antibody bundle < $HOME/dotfiles/zsh/plugins > $HOME/.zsh_plugins.sh
 source $HOME/.zsh_plugins.sh
-
 
 # History file configuration
 HISTFILE=$HOME/.zsh_history
@@ -52,7 +51,6 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 
 # Colors
 autoload -U colors && colors
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
 setopt auto_cd
 setopt multios
 setopt prompt_subst
@@ -75,11 +73,6 @@ nvm() {
   [ -s $NVM_DIR/nvm.sh ] && source $NVM_DIR/nvm.sh
   nvm "$@"
 }
-
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case -g "!{.git,node_modules}"'
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 # Ripgrep
 export RIPGREP_CONFIG_PATH=$HOME/.rgrc
@@ -116,5 +109,25 @@ n ()
 source $HOME/dotfiles/zsh/aliases
 [ -f ~/.secrets ] && source ~/.secrets
 
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case -g "!{.git,node_modules}"'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+fh() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# The following lines were added by compinstall
+zstyle :compinstall filename "$HOME/.zshrc"
+
